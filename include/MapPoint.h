@@ -40,7 +40,9 @@ class MapPoint
 {
 public:
     MapPoint(const cv::Mat &Pos, KeyFrame* pRefKF, Map* pMap);
+    MapPoint(const cv::Mat &Pos, KeyFrame* pRefKF, Map* pMap, const float grayscaleValue);
     MapPoint(const cv::Mat &Pos,  Map* pMap, Frame* pFrame, const int &idxF);
+    MapPoint(const cv::Mat &Pos,  Map* pMap, Frame* pFrame, const int &idxF, const float grayscaleValue);
 
     void SetWorldPos(const cv::Mat &Pos);
     cv::Mat GetWorldPos();
@@ -87,6 +89,7 @@ public:
     long int mnFirstKFid;
     long int mnFirstFrame;
     int nObs;
+    float grayscaleValue;	
 
     // Variables used by the tracking
     float mTrackProjX;

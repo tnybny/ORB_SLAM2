@@ -61,6 +61,7 @@ public:
     cv::Mat GrabImageStereo(const cv::Mat &imRectLeft,const cv::Mat &imRectRight, const double &timestamp);
     cv::Mat GrabImageRGBD(const cv::Mat &imRGB,const cv::Mat &imD, const double &timestamp);
     cv::Mat GrabImageMonocular(const cv::Mat &im, const double &timestamp);
+    cv::Mat GrabImageMonocular(const cv::Mat &im, const cv::Mat &im_ir, const double &timestamp);
 
     void SetLocalMapper(LocalMapping* pLocalMapper);
     void SetLoopClosing(LoopClosing* pLoopClosing);
@@ -119,13 +120,16 @@ protected:
 
     // Main tracking function. It is independent of the input sensor.
     void Track();
+    void Track(const cv::Mat &im_ir);
 
     // Map initialization for stereo and RGB-D
     void StereoInitialization();
 
     // Map initialization for monocular
     void MonocularInitialization();
+    void MonocularInitialization(const cv::Mat &im_ir);
     void CreateInitialMapMonocular();
+    void CreateInitialMapMonocular(const cv::Mat &im_ir);
 
     void CheckReplacedInLastFrame();
     bool TrackReferenceKeyFrame();

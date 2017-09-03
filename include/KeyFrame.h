@@ -92,6 +92,7 @@ public:
 
     // KeyPoint functions
     std::vector<size_t> GetFeaturesInArea(const float &x, const float  &y, const float  &r) const;
+    std::vector<cv::KeyPoint> GetKeyPoints() const;
     cv::Mat UnprojectStereo(int i);
 
     // Image

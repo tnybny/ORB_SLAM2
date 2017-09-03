@@ -286,6 +286,11 @@ MapPoint* KeyFrame::GetMapPoint(const size_t &idx)
     return mvpMapPoints[idx];
 }
 
+vector<cv::KeyPoint> KeyFrame::GetKeyPoints() const
+{
+    return mvKeys;
+}
+
 void KeyFrame::UpdateConnections()
 {
     map<KeyFrame*,int> KFcounter;

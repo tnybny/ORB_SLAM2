@@ -99,6 +99,7 @@ public:
     cv::Mat UnprojectStereo(const int &i);
 
 public:
+    cv::Mat imGray;
     // Vocabulary used for relocalization.
     ORBVocabulary* mpORBvocabulary;
 

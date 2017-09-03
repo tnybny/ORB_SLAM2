@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=/afs/unity.ncsu.edu/users/b/bramach2/Documents/Thermal_sensing/Pangolin/build/src:$LD_LIBRARY_PATH:/afs/unity.ncsu.edu/users/b/bramach2/Documents/Thermal_sensing/ORB_SLAM2/Thirdparty/g2o/lib
